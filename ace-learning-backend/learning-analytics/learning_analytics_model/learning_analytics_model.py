@@ -129,7 +129,7 @@ def train_models(df):
     X_train_c_scaled = scaler.fit_transform(X_train_c)
     X_test_c_scaled = scaler.transform(X_test_c)
 
-    clf_model = LogisticRegression(max_iter=1000)
+    clf_model = LogisticRegression(max_iter=1000, class_weight="balanced")
     clf_model.fit(X_train_c_scaled, y_train_c)
 
     y_pred_c = clf_model.predict(X_test_c_scaled)
