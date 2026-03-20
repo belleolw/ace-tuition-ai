@@ -8,6 +8,7 @@ import StudentPractice from "./pages/student/StudentPractice"
 import AlgebraDrillSet from "./pages/student/AlgebraDrillSet"
 import StudentStudyPlan from "./pages/student/StudentStudyPlan"
 import StudentProgress from "./pages/student/StudentProgress"
+import StudentWellness from "./pages/student/StudentWellness"
 
 import ParentDashboard from "./pages/parent/ParentDashboard";
 import ParentChildProgressPage from "./pages/parent/ParentChildProgressPage";
@@ -55,6 +56,11 @@ export const router = createBrowserRouter([
     // Student progress route
     path: "/student/progress",
     element: <StudentProgress />
+  },
+  {
+    // Student wellness route     
+    path: "/student/wellness",
+    element: <StudentWellness />
   },
   {
     // Parent dashboard route
