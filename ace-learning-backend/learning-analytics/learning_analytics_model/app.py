@@ -5,18 +5,32 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restx import Api, Resource
 
-from .learning_analytics_model import (
-    build_recent_assessments,
-    build_recommended_actions,
-    build_student_progress_summary,
-    build_study_plan,
-    calculate_topic_analytics,
-    classify_risk_level,
-    detect_weak_topics,
-    generate_teacher_focus_list,
-    load_model_bundle,
-    predict_exam_score,
-)
+try:
+    from learning_analytics_model import (
+        build_recent_assessments,
+        build_recommended_actions,
+        build_student_progress_summary,
+        build_study_plan,
+        calculate_topic_analytics,
+        classify_risk_level,
+        detect_weak_topics,
+        generate_teacher_focus_list,
+        load_model_bundle,
+        predict_exam_score,
+    )
+except ImportError:
+    from .learning_analytics_model import (
+        build_recent_assessments,
+        build_recommended_actions,
+        build_student_progress_summary,
+        build_study_plan,
+        calculate_topic_analytics,
+        classify_risk_level,
+        detect_weak_topics,
+        generate_teacher_focus_list,
+        load_model_bundle,
+        predict_exam_score,
+    )
 
 
 def _get_allowed_origins():
@@ -149,4 +163,8 @@ def create_app():
     return app
 
 
+
 app = create_app()
+
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=5001, debug=app.config.get("DEBUG", False))
