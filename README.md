@@ -75,7 +75,7 @@ Teachers can:
 # Project Structure
 
 ```text
-ace-tuition-AI
+ace-learning-AI
 │
 ├─ ace-learning-frontend
 │   ├─ src
@@ -106,7 +106,7 @@ ace-tuition-AI
 │       │   └─ student_learning_data.csv
 │       └─ learning_analytics_model
 │           ├─ app.py
-│           ├─ learning_analytics_model.py
+│           └─ learning_analytics_model.py
 │
 ├─ .gitignore
 └─ README.md
